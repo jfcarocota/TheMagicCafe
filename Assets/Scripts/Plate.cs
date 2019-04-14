@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class Plate : MonoBehaviour
 {
-    
 
-    void Start()
+
+    [SerializeField]
+    bool isDelivered = false;
+
+
+    private void OnTriggerStay(Collider other)
     {
-        
+        if (Input.GetButtonDown("Submit") && other.tag == "Player" && !isDelivered)
+        {
+            Player player = other.GetComponent<Player>();
+            player.Anim.SetTrigger("Start bring");
+            transform.parent = player.PlateTrans;
+            transform.localPosition = Vector3.zero;
+        }
     }
 
-    void Update()
-    {
-        
-    }
 }

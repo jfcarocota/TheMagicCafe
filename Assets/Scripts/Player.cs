@@ -8,7 +8,8 @@ public class Player : MonoBehaviour
     [SerializeField]
     float moveSpeed;
     Animator anim;
-
+    [SerializeField]
+    Transform plateTrans;
 
     void Start()
     {
@@ -30,4 +31,7 @@ public class Player : MonoBehaviour
     }
 
     public Vector3 Axis{ get => new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical")); }
+    public Animator Anim { get => anim; }
+    public Transform PlateTrans { get => plateTrans; }
 }
+
