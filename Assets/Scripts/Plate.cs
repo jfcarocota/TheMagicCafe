@@ -18,6 +18,9 @@ public class Plate : MonoBehaviour
             player.Anim.SetTrigger("Start bring");
             transform.parent = player.PlateTrans;
             transform.localPosition = Vector3.zero;
+            transform.rotation = Quaternion.identity;
+            transform.localScale = Vector3.one;
+            player.CurrentPlate = gameObject;
         }
     }
 
